@@ -1,0 +1,10 @@
+{
+  apps : [
+    {
+      name      : "bioplast",
+      script    : "npx",
+      interpreter: "none",
+      args: "frontity serve"
+    }
+  ]
+}

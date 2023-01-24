@@ -1,0 +1,688 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+html * {
+  font-family: "Montserrat", sans-serif;
+}
+
+
+/* 
+  .footer-wrapper-bg {
+
+      background-image: url('../images/footer-bg.jpeg');
+      position: relative;
+  } */
+
+  .mobi-mbri-search::after {
+    content: "\26B2";
+    color: white;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: block;
+    font-size: 1.2em;
+
+  }
+  #ReactSimpleImageViewer {
+    z-index: 999999999999999 !important;
+    background: rgba(0,0,0,.35) !important;
+  }
+
+   #ReactSimpleImageViewer img {
+    height: 100% !important;
+   }
+   
+   #ReactSimpleImageViewer .image-preview-close {
+    
+    border-radius: 50%;
+    transition: all 0.3s;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    top: 50%;
+
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.8em;
+    line-height: 60px;
+    color: white;
+   }
+
+   #ReactSimpleImageViewer .image-preview-close:hover {
+    color: white;
+    transition: all 0.3s;
+   }
+
+  .footer-socmed-wrapper {
+    padding-left: 1.5rem;
+  }
+
+  .footer-social-media {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-right: 5px;
+
+  }
+
+  .socmed-logo {
+    width: 20x;
+
+    height: 20px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    .footer-wrapper-bg {
+      background-image: none !important;
+
+    }
+  }
+.head-container {
+  position: fixed;
+  top: 0;
+  z-index: 999999999;
+  background: white;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100vw;
+  height: 90px;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.head-container.scrolled {
+  height:70px;
+    transition: all 0.25s ease;
+}
+
+.head-container .head-wrapper {
+
+    width:100%;
+    max-width:1200px;
+    margin: 0 auto;
+}
+
+
+
+@media only screen and (min-width: 721px) {
+  /* .head-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  } */
+.head-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.head-container .head-content {
+  width: 100%;
+}
+
+.head-container .head-content .head-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+
+}
+
+
+  @media only screen and (max-width: 720px) {
+    .main-content {
+
+      margin-top: 80px;
+    }
+
+    .head-container.scrolled .header-menu-mobile {
+      top: 60px;
+    }
+
+  }
+
+@media only screen and (max-width: 720px ) {
+  .head-container {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .head-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .head-wrapper {
+    padding-left: 2vw;
+    max-width: 80%;
+    margin: 0;
+
+  }
+
+
+  .header-menu-mobile {
+    position: fixed;
+    top: 80px;
+    width: 100vw;
+    padding: 1em;
+    background: white;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.4s linear, opacity 0.5s ease, visibility 0.2s ease;
+  }
+
+  .header-menu-mobile.open {
+    max-height: 100vh;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.4s linear, opacity 0.5s ease, visibility 0.2s ease;
+  }
+
+  .nav-menu-item-mobile {
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu-item-mobile a,
+  .nav-menu-item-mobile span {
+    color: #007fc5;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100vw;
+    font-weight: 500;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+
+
+  .nav-menu-item-mobile a[aria-current=page],
+  .nav-menu-item-mobile span[aria-current=page] {
+    color: rgb(71, 71, 71) !important;
+  }
+
+  .nav-menu-item-mobile img {
+    width: 15px;
+    height: auto;
+
+  }
+
+  .submenu-mobile {
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.2s linear, visibility 0.2s ease, opacity 0.4s ease 0s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .submenu-mobile.open {
+    max-height: 80vh;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.4s linear, visibility 0.2s ease, opacity 0.4s ease 0s;
+  }
+
+  .submenu-mobile a {
+    text-transform: capitalize;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+}
+
+
+strong {
+  font-weight: bold !important;
+}
+
+.alert-red {
+  background-color: #f8d7da !important;
+  border: 1px solid #f5c6cb !important;
+  color: #721c24 !important;
+}
+.info3 {
+  position: relative;
+  width: 100%;
+  /* padding-left: 60.5px;
+  padding-right: 60.5px; */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.vc_figure {
+  width: 100%;
+}
+
+.wpb_single_image .vc_single_image-wrapper {
+  width: 100%;
+}
+
+.vc-row.border-0,
+.border-0 {
+  border: none !important;
+}
+
+.vc_section.info3.cid-t2127uwXmW {
+  width: 100vw !important;
+  background-position: center !important;
+  background-position: center !important;
+}
+
+/* CAREER PAGE */
+.cid-t1E6VzhZx8 {
+  padding-top: 9rem;
+  padding-bottom: 7rem;
+  background-image: url("https://wp.bioplast.co.id/wp-content/themes/bioplast/inc/images/banner-kecil-x-2-2000x469.jpg");
+}
+#info3-5c {
+  width: 100vw;
+}
+
+/* PRODUCT */
+.vc_section.info3.cid-sUXqLEaU9y {
+  background-image: url("https://wp.bioplast.co.id/wp-content/themes/bioplast/inc/images/banner-kecil-x-3-2000x469.jpg");
+  width: 100vw;
+  background-position: 50% 50% !important;
+  background-size: cover;
+}
+
+#single-product.item-wrapper {
+  background: #fafafa;
+}
+
+#single-product.item-wrapper .frontity-lazy-image {
+  width: 100%;
+}
+
+#single-product.item-wrapper .item-content {
+  padding: 1em;
+}
+
+/* HOME */
+#our-client.embla {
+  display: none;
+}
+.embla__container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 33%;
+  /* display: flex;
+  grid-auto-flow: column;
+  grid-auto-columns: 33%; */
+}
+
+.embla__slide .item-img img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 720px) {
+  #carouselHome .carousel-indicators {
+    display: none;
+  }
+#carouselHome .carousel-item  {
+    height: 41rem !important;
+  }
+
+  #carouselHome .carousel-item h5 {
+    font-size: 2em;
+  }
+
+  #carouselHome .carousel-control-prev, #carouselHome .carousel-control-next {
+    top: unset;
+    bottom: 1em;
+  }
+
+  #carouselHome .carousel-control-next {
+    right: 1em;
+  }
+
+  #carouselHome .carousel-control-prev {
+    left: 1em;
+  }
+
+  #carouselHome .carousel-item img {
+    object-fit: cover;
+    height: 41rem !important;
+  }
+
+  #carouselHome {
+    margin-bottom: 1em;
+  }
+}
+#carouselHome h5 {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: right;
+
+  position: absolute;
+  top: 1em;
+  right: 15vw;
+  z-index: 99;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#carouselHome .carousel-item {
+  position: relative;
+  width: 100vw;
+  height: 36rem;
+}
+
+#carouselHome .carousel-item img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  z-index: 200;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  /* top: 50%; */
+  width: 60px;
+  height: 60px;
+  /* margin-top: -1.5rem; */
+  font-size: 22px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 1em;
+  background-size: 1em;
+}
+
+.carousel-indicators button {
+  max-width: 15px;
+  height: 15px !important;
+  width: 15px;
+  max-height: 15px;
+  margin: 3px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.vc_section.features15.cid-sUihnFvjyC img {
+  width: 100%;
+  left: 0;
+}
+
+.cid-sULylFaPda {
+  background-image: url("https://wp.bioplast.co.id/wp-content/themes/bioplast/inc/images/bio-39-nah-2000x1333.jpg");
+  width: 100vw;
+}
+
+#info3-1z h4 {
+  font-weight: bold;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#info3-1z {
+  background: rgba(0, 0, 0, 0.6);
+  min-width: 100vw;
+  left: 0px;
+  width: 100vw;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .features15 .content-wrapper {
+    max-width: 720px !important;
+    width: 100% !important;
+  }
+
+  .features15 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1139px) {
+  .features15 .content-wrapper {
+    max-width: 960px !important;
+    width: 100% !important;
+  }
+
+  .features15 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .features15 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .features15 .content-wrapper {
+    /* padding-left: 10em; */
+    max-width: 1140px !important;
+    width: 100% !important;
+  }
+}
+/* 
+@media only screen and (max-device-width: 1366px) {
+  #info3-1 {
+    background-attachment: scroll !important;
+  }
+} */
+
+
+
+
+
+
+#info3-1z .cid-sULylFaPda {
+
+  padding-top: 8em !important;
+  padding-bottom: 8em !important;
+
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://wp.bioplast.co.id/wp-content/themes/bioplast/inc/images/bio-39-nah-2000x1333.jpg") !important;
+  transform-style: preserve-3d !important;
+  /* background: 50% 50% / cover !important; */
+  /* z-index: -1; */
+  background-attachment: fixed !important;
+  background-position: 50% 50% / cover !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  position: relative;
+  
+
+
+  /* overflow-y: scroll;
+  overflow-x: hidden;
+  perspective: 1px;
+  transform-style: preserve-3d; */
+
+
+}
+
+#info3-1z .wpb-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6) !important;
+  z-index: 999;
+}
+
+
+
+
+
+/* #info3-1z .cid-sULylFaPda::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+} */
+
+
+#info3-1z {
+  padding-left:  0 !important ;
+  background: rgba(0, 0, 0, 0.6) !important;
+
+}
+/* 
+.cid-sULylFaPda::before {
+
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateZ(-1px) scale(2);
+  z-index: -1;
+  transform: translateZ(-1px) scale(2);
+}
+
+.cid-sULylFaPda, .cid-sULylFaPda:before {
+  background: 50% 50% / cover !important;
+} */
+
+
+.contact-us input[type='text'],
+.contact-us input[type='email'] {
+   
+    box-sizing: border-box;
+    margin: 0;
+    display: block;
+    appearance: none;
+    background-color: #ffffff;
+    background-clip: border-box;
+    color: #232323;
+    line-height: 1rem !important;
+    height: auto;
+    padding: 0.6rem 1.2rem;
+    transition: border-color 0.25s ease 0s;
+    border: 1px solid transparent !important;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
+    min-height: 48px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.contact-us .form-textarea {
+
+    padding: 0.6rem 1.2rem !important;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
+
+    border: 1px solid transparent !important;
+
+    
+}
+
+.contact-us input[type='text']:hover,
+.contact-us input[type='text']:focus,
+.contact-us input[type='email']:hover,
+.contact-us input[type='email']:focus,
+.contact-us .form-textarea:hover,
+.contact-us .form-textarea:focus {
+  border-color: black !important;
+}
+
+#carouselHome .carousel-item img {
+  height: 36rem;
+  object-fit: cover;
+}
+
+/* About Us Slider */
+
+.vc_section.info3.cid-t2127uwXmW {
+  width: 100vw !important;
+  -webkit-background-position: center !important;
+  background-position: center !important;
+  background-size: cover;
+}
+
+/* Product Banner */
+
+.vc_section.info3.cid-sUXqLEaU9y {
+  background-image: url(https://wp.bioplast.co.id/wp-content/themes/bioplast/inc/images/banner-kecil-x-3-2000x469.jpg);
+  width: 100vw;
+  -webkit-background-position: center !important;
+  background-position: center !important;
+  background-size: cover;
+}
+
+/* Product List */
+
+.cid-sV1Ga2r5d5 .item-wrapper {
+  position: relative;
+  border-radius: 4px;
+  background: #fafafa;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#single-product .item-content p {
+  font-family: Jost;
+  font-size: 1rem;
+}
+
+/* Contact Form */
+
+.form-control {
+  background-color: #ffffff;
+  background-clip: border-box;
+  color: #232323;
+  line-height: 1rem !important;
+  height: auto;
+  padding: 0.6rem 1.2rem;
+  transition: border-color 0.25s ease 0s;
+  border: 1px solid transparent !important;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
+}

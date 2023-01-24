@@ -1,0 +1,37 @@
+{
+  "name": "bioplast",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "keywords": [
+    "frontity"
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve"
+  },
+  "prettier": {},
+  "dependencies": {
+    "@awsmin/f1": "file:packages/f1",
+    "@frontity/core": "^1.16.0",
+    "@frontity/html2react": "^1.7.0",
+    "@frontity/tiny-router": "^1.4.4",
+    "@frontity/wp-source": "^1.11.7",
+    "bootstrap": "5.2.0-beta1",
+    "embla-carousel-autoplay": "7.0.0-rc05",
+    "embla-carousel-react": "7.0.0-rc05",
+    "form-data": "4.0.0",
+    "frontity": "^1.17.2",
+    "g": "^2.0.1",
+    "jarallax": "2.0.4",
+    "parallax": "0.0.0",
+    "pm2": "^5.2.0",
+    "react-awesome-slider": "4.1.0",
+    "react-simple-image-viewer": "1.2.2"
+  }
+}
