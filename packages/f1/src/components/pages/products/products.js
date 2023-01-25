@@ -27,6 +27,7 @@ const ProductPage = ({ state, actions, libraries }) => {
         var docHeader = new DOMParser().parseFromString(_page.content.rendered, "text/html")
 
         const _header = docHeader.getElementsByTagName('section')[0].outerHTML
+        const newHeader = _header.replace(/vc_section-has-fill/g, "");
 
         var docBody = docHeader.getElementsByClassName('item features-image wpb_column vc_column_container')
 
@@ -56,7 +57,8 @@ const ProductPage = ({ state, actions, libraries }) => {
 
 
         setPage(_page)
-        setHeader(_header)
+        setHeader(newHeader)
+        console.log(newHeader)
 
         setProducts(_products)
 
