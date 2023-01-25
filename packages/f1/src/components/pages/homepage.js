@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { connect, styled } from "frontity"
-import Link from "../link"
-import List from "../list"
+// import Link from "../link"
+// import List from "../list"
 import Loading from '../loading'
 
 import useEmblaCarousel from 'embla-carousel-react'
@@ -18,6 +18,8 @@ const HomePage = ({ state, actions, libraries }) => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
   const data = state.source.get(state.router.link)
   const [homepage, setHomepage] = useState(null)
+  const [slider, setSlider] = useState([])
+  const [activeIndex, setActiveIndex] = useState(0);
   const Html2React = libraries.html2react.Component
   
 
@@ -26,8 +28,10 @@ const HomePage = ({ state, actions, libraries }) => {
 
     _homepage.content.rendered = _homepage.content.rendered.replace(/frontity-container/g, "container")
     _homepage.content.rendered = _homepage.content.rendered.replace(/frontity-border-0/g, "border-0")
-    console.log(_homepage.content.rendered)
+    // console.log(_homepage.content.rendered)
     setHomepage(_homepage)
+    setSlider(_homepage.acf.sliders)
+    console.log(_homepage.acf.sliders)
 
       runJarallax()
   }, [])
@@ -47,36 +51,43 @@ const HomePage = ({ state, actions, libraries }) => {
     // }, 2000);
 
   }
+  const handleSlideChange = (index) => {
+    setActiveIndex(index);
+  }
+
   return data.isReady ? (
     <Content>
 
+{/* <div>
+      {slider.map((slider, index) => (
+        <div key={index}>
+          <img src={slider.image} alt={slider.title} />
+          <p>{slider.title}</p>
+        </div>
+      ))}
+    </div> */}
+
       <div id="carouselHome" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        {slider.map((slider, index) => (
+          <button type="button" data-bs-target="#carouselHome" data-bs-slide-to={index} class={`${index === activeIndex ? 'active' : ''}`} aria-current={` ${index === activeIndex ? 'true' : ''}`} aria-label={"Slide" +index}></button>
+        ))}
+          {/* <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="3" aria-label="Slide 4"></button> */}
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://wp.bioplast.co.id/wp-content/uploads/2022/07/landing-page-banner-x-5.jpg" class="d-block w-100" alt="..." />
-            <h5>Welcome to<br />PT Bioplast Unggul</h5>
-
-          </div>
-          <div class="carousel-item">
-            <img src="https://wp.bioplast.co.id/wp-content/uploads/2022/07/landing-page-banner-x-9.jpg" class="d-block w-100" alt="..." />
-            <h5>Guaranteed and Consistent<br />Product Quality</h5>
-
-          </div>
-          <div class="carousel-item">
-            <img src="https://wp.bioplast.co.id/wp-content/uploads/2022/07/landing-page-banner-x-6.jpg" class="d-block w-100" alt="..." />
-            <h5>On Time Delivery</h5>
-          </div>
-
-          <div class="carousel-item">
-            <img src="https://wp.bioplast.co.id/wp-content/uploads/2022/07/landing-page-banner-x-8.jpg" class="d-block w-100" alt="..." />
-            <h5>Supported by Reliable Marketing</h5>
-          </div>
+        {slider.map((slider, index) => (
+            <div  key={index} 
+          class={`carousel-item ${index === activeIndex ? 'active' : ''}`}
+          onClick={() => handleSlideChange(index)}
+        >
+              <img src={slider.image} alt={slider.title} class="d-block w-100" />
+              <h5 dangerouslySetInnerHTML={{__html: slider.title}} />
+            </div>
+          ))}
+         
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
